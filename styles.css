@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Basic layout and improved color variables */
 :root {
   --bg: #f4f6f8;        /* very light neutral */
@@ -35,6 +36,29 @@ body {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0.75rem 1rem;
+=======
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 2rem;
+  background: #f6f8fa;
+}
+
+/* Header / Navigation */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e9ee;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.site-header .container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+.header-inner {
+>>>>>>> 455bac99a3a0a530762f400858acd14612c3862c
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,26 +66,42 @@ body {
 }
 .brand {
   font-weight: 700;
+<<<<<<< HEAD
   color: var(--text);
   text-decoration: none;
   font-size: 1.05rem;
+=======
+  color: #111827;
+  text-decoration: none;
+  font-size: 1.125rem;
+>>>>>>> 455bac99a3a0a530762f400858acd14612c3862c
 }
 .main-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
+<<<<<<< HEAD
   gap: 0.6rem;
 }
 .main-nav a {
   color: var(--muted);
   text-decoration: none;
   padding: 0.45rem 0.65rem;
+=======
+  gap: 0.75rem;
+}
+.main-nav a {
+  color: #374151;
+  text-decoration: none;
+  padding: 0.5rem 0.6rem;
+>>>>>>> 455bac99a3a0a530762f400858acd14612c3862c
   border-radius: 6px;
   transition: background-color 120ms ease, color 120ms ease;
 }
 .main-nav a:hover,
 .main-nav a:focus {
+<<<<<<< HEAD
   background: rgba(0,0,0,0.04);
   color: var(--text);
   outline: none;
@@ -84,4 +124,16 @@ body {
   body { padding: 1rem; }
   .header-inner { flex-direction: column; align-items: flex-start; }
   .main-nav ul { flex-wrap: wrap; gap: 0.4rem; }
+=======
+  background: #f3f4f6;
+  color: #111827;
+  outline: none;
+}
+
+/* Responsive: stack nav under brand on narrow screens */
+@media (max-width: 640px) {
+  body { padding: 1rem; }
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .main-nav ul { flex-wrap: wrap; gap: 0.5rem; }
+>>>>>>> 455bac99a3a0a530762f400858acd14612c3862c
 }
