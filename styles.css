@@ -1,40 +1,24 @@
-/* Basic layout and improved color variables */
-:root {
-  --bg: #f4f6f8;        /* very light neutral */
-  --text: #0b1b2b;      /* deep slate for good contrast */
-  --header-bg: #ffffff; /* header surface */
-  --muted: #506070;     /* nav muted color */
-  --accent: #0b84ff;    /* small accent color */
-}
-
-[data-theme="dark"] {
-  --bg: #071026;        /* deep navy/charcoal */
-  --text: #e6eef8;      /* soft light text */
-  --header-bg: #081428; 
-  --muted: #9fb0c5;     /* muted links in dark */
-  --accent: #5fb3ff;
-}
-
 body {
+  font-family: system-ui, sans-serif;
   margin: 0;
   padding: 2rem;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background: var(--bg);
-  color: var(--text);
+  background: #f6f8fa;
 }
 
-/* Header / Navigation (minimal) */
+/* Header / Navigation */
 .site-header {
-  background: var(--header-bg);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: #ffffff;
+  border-bottom: 1px solid #e6e9ee;
   position: sticky;
   top: 0;
-  z-index: 40;
+  z-index: 50;
 }
-.header-inner {
+.site-header .container {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0.75rem 1rem;
+}
+.header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -62,26 +46,36 @@ body {
 }
 .main-nav a:hover,
 .main-nav a:focus {
-  background: rgba(0,0,0,0.04);
-  color: var(--text);
+  background: #f3f4f6;
+  color: #111827;
   outline: none;
 }
 
-/* Theme toggle button (minimal) */
-.theme-toggle {
-  background: transparent;
-  border: none;
-  font-size: 1.05rem;
-  line-height: 1;
-  cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
+/* Skip link (accessibility) */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
-.theme-toggle:focus { outline: 2px solid rgba(11,132,255,0.25); }
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 4px;
+  z-index: 60;
+}
 
-/* Responsive small screens */
+/* Responsive: stack nav under brand on narrow screens */
 @media (max-width: 640px) {
   body { padding: 1rem; }
   .header-inner { flex-direction: column; align-items: flex-start; }
-  .main-nav ul { flex-wrap: wrap; gap: 0.4rem; }
+  .main-nav ul { flex-wrap: wrap; gap: 0.5rem; }
 }
